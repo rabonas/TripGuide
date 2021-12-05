@@ -64,7 +64,7 @@ export const Footer = () => {
             <Container>
             <GetPro/>
                 <FooterRow>
-                    <div className="">
+                    <div>
                         <Link to="/">
                             <AlignCenter>
                                 <img src="/assets/tripGuideLogo.svg" alt="" />
@@ -77,7 +77,7 @@ export const Footer = () => {
                             <ThemeBtnDark onClick={() => toggleTheme('dark')}><i className="icon-moon"></i></ThemeBtnDark>
                         </Theme>
                     </div>
-                    <div className="">
+                    <div>
                         <LinkTitle>{t('services')}</LinkTitle>
                         <FooterLink href="#">{t('servicesLink1')}</FooterLink>
                         <FooterLink href="#">{t('servicesLink2')}</FooterLink>
@@ -85,7 +85,7 @@ export const Footer = () => {
                         <FooterLink href="#">{t('servicesLink4')}</FooterLink>
                         <FooterLink href="#">{t('servicesLink5')}</FooterLink>
                     </div>
-                    <div className="">
+                    <div>
                         <LinkTitle>{t('support')}</LinkTitle>
                         <FooterLink href="#">{t('supportLink1')}</FooterLink>
                         <FooterLink href="#">{t('supportLink2')}</FooterLink>
@@ -93,7 +93,7 @@ export const Footer = () => {
                         <FooterLink href="#">{t('supportLink4')}</FooterLink>
                         <FooterLink href="#">{t('supportLink5')}</FooterLink>
                     </div>
-                    <div className="">
+                    <div>
                         <LinkTitle>{t('business')}</LinkTitle>
                         <FooterLink href="#">{t('businessLink1')}</FooterLink>
                         <FooterLink href="#">{t('businessLink2')}</FooterLink>

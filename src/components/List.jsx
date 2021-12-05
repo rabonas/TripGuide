@@ -1,16 +1,13 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import styled from "styled-components";
-import { Row, IconStar, RatingParcent, RatingNum } from '../styled';
+import { Row, IconStar, Rating, RatingParcent, RatingNum } from '../styled';
 
-const Rating = styled.div`
-    font-weight: 500;
-    font-size: 14px;
-`
 const ListItem = styled.div`
     display: flex;
     align-items: center;
-    border: 1px solid #E7ECF3;
+    border: 1px solid ${(props) => props.theme.bellAfter};
     border-radius: 20px;
     overflow: hidden;
     margin-bottom: 50px;
@@ -20,7 +17,7 @@ const ListTitle = styled.h3`
     margin: 30px 0 22px;
     font-size: 40px;
     letter-spacing: -0.005em;
-    color: #23262F;
+    color: ${(props) => props.theme.titleColor};
 `
 const ListText = styled.div`
     padding: 0 26px; 
@@ -29,11 +26,11 @@ const Comforts = styled.span`
     display: block;
     font-size: 14px;
     margin: 12px 0;
-    color: #3B3E44;
+    color: ${(props) => props.theme.cardText};
 `
 const Icon = styled.i`
     margin-right: 10px;
-    color: #84878B;
+    color: ${(props) => props.theme.iconColor};
 `
 const Flex = styled.div`
     display: flex;
@@ -41,10 +38,10 @@ const Flex = styled.div`
 const Gps = styled.span`
     margin-left: 20px;
     font-size: 14px;
-    color: #84878B;
+    color: ${(props) => props.theme.iconColor};
 `
 const Info = styled.span`
-    color: #141416;
+    color: ${(props) => props.theme.listInfo};
     display: inline-block;
     line-height: 34px;
     &:nth-child(1) {
@@ -58,9 +55,9 @@ const Price = styled.span`
     display: block;
     font-weight: bold;
     font-size: 28px;
-    color: #23262F;
+    color: ${(props) => props.theme.listPrice};
     padding: 10px 20px;
-    background: #F4F5F6;
+    background: ${(props) => props.theme.footerBg};
     border-radius: 37px;
     margin-bottom: 20px;
 `
@@ -69,8 +66,8 @@ const ForPrice = styled.span`
     font-weight: 500;
     font-size: 16px;
 `
-const Booking = styled.button`
-    padding: 10px 30px;
+const Booking = styled(Link)`
+    padding: 10px 40px;
     background: #3B71FE;
     box-shadow: 0px 5px 20px rgba(20, 92, 230, 0.14);
     border-radius: 23px;
@@ -111,7 +108,7 @@ export const List = (props) => {
                     </div>
                     <div>
                         <Price>{props.price} <ForPrice>{t('forTwo')}</ForPrice></Price>
-                        <Booking>{t('bookNow')}</Booking>
+                        <Booking to="/details">{t('bookNow')}</Booking>
                     </div>
                 </Row>
 

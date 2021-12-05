@@ -52,20 +52,18 @@ export const Explore = () => {
     return (
         <ExploreCard>
             <ExploreImg src="/assets/dacha.jpg" alt="" />
-            {/* <div className="explore__info"> */}
-                <Rating>
-                    <IconStar className="icon-star"></IconStar> 
-                    <RatingParcent>4.91</RatingParcent> 
-                    <RatingNum>(147)</RatingNum>
-                </Rating>
-                <Row>
-                    <InfoName>Comfort Space</InfoName>
-                    <InfoPrice>$210</InfoPrice>
-                </Row>
-                <Distance>1.2 km {t('town')}</Distance>
-                <Info><i className="icon-map"></i> Turkey, Mamaris</Info>
-                <Info><i className="icon-rooms"></i> {t('rooms')}: 375</Info>
-            {/* </div> */}
+            <Rating>
+                <IconStar className="icon-star"></IconStar> 
+                <RatingParcent>4.91</RatingParcent> 
+                <RatingNum>(147)</RatingNum>
+            </Rating>
+            <Row>
+                <InfoName>Comfort Space</InfoName>
+                <InfoPrice>$210</InfoPrice>
+            </Row>
+            <Distance>1.2 km {t('town')}</Distance>
+            <Info><i className="icon-map"></i> Turkey, Mamaris</Info>
+            <Info><i className="icon-rooms"></i> {t('rooms')}: 375</Info>
         </ExploreCard>
     )
 }

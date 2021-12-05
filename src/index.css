@@ -37,7 +37,7 @@ a {
 
 .check::-webkit-inner-spin-button,
 .check::-webkit-calendar-picker-indicator {
-    width: 30%;
+    width: 20%;
      opacity:0;   
     -webkit-appearance: none;
  }
@@ -111,4 +111,12 @@ a {
 
 .margin {
   margin: 13px 0;
+}
+
+.react-tabs__tab:focus:after {
+  background-color: transparent !important;
+}
+
+.react-tabs__tab:focus {
+  box-shadow: none !important;
 }

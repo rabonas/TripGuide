@@ -4,6 +4,7 @@ import { Search } from '../components/Search'
 import styled from 'styled-components'
 import { BigFilter } from '../components/BigFilter'
 import { List } from '../components/List'
+import { Bread, ThisPage } from '../styled';
 
 const TopSection = styled.section`
     padding: 120px 0 250px;
@@ -23,16 +24,24 @@ const Flex = styled.div`
     display: flex;
 `
 const View = styled.button`
+    color: ${(props) => props.theme.filterTitle};
     padding: 10px 40px;
     border: 1px solid #B1B5C4;
     border-radius: 47px;
     background-color: transparent;
+`
+const Links = styled.div`
+    margin: 0 55px 60px;
 `
 
 export const Hotelist = () => {
     const { t } = useTranslation()
     return (
         <TopSection>
+            <Links>
+                <Bread to="/">{t('pageName1')} <span className="icon-right"></span></Bread>
+                <ThisPage>{t('pageName2')}</ThisPage>
+            </Links>
             <Search/>
             <BigContainer>
                 <Flex>

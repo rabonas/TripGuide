@@ -9,7 +9,7 @@ import { Tab, Tabs, TabList } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
 const SearchRow = styled.div`
-    width: 850px;
+    width: 80%;
     padding-bottom: 26px;
     display: flex;
     justify-content: space-between;
@@ -29,7 +29,7 @@ const Reservation = styled.span`
     position: relative;
     margin-right: 30px; 
     color: #84878B;
-    &.react-tabs__tab--selected {
+    .react-tabs__tab.react-tabs__tab--selected &{
         color: ${(props) => props.theme.btnColor};
     }
 `
@@ -46,7 +46,7 @@ const Sum = styled.div`
 const Pessenger = styled.div`
     display: inline-block;
     position: relative;
-    margin-left: 25px;
+    margin-left: 25px; 
 `
 const ContentText = styled.span`
     display: block;
@@ -203,29 +203,29 @@ export const Search = () => {
                                     <ContentText>{t('adult')}</ContentText>
                                     <ContentAge>{t('adultAge')}</ContentAge>
                                 </div>
-                                <div className="">
+                                <div>
                                     <ContentBtn onClick={() => {setUser(user > 0 ? user - 1 : 0)}}><i className="icon-minus"></i></ContentBtn>
                                     <UserCount>{user}</UserCount>
                                     <ContentBtn onClick={() => {setUser(user + 1)}}><i className="icon-plus"></i></ContentBtn>
                                 </div>
                             </Sum>
                             <Sum>
-                                <div className="">
+                                <div>
                                     <ContentText>{t('child')}</ContentText>
                                     <ContentAge>{t('childAge')}</ContentAge>
                                 </div>
-                                <div className="">
+                                <div>
                                     <ContentBtn onClick={() => {setChild(child > 0 ? child - 1 : 0)}}><i className="icon-minus"></i></ContentBtn>
                                     <UserCount>{child}</UserCount>
                                     <ContentBtn onClick={() => {setChild(child + 1)}}><i className="icon-plus"></i></ContentBtn>
                                 </div>
                             </Sum>
                             <Sum>
-                                <div className="">
+                                <div>
                                     <ContentText>{t('infant')}</ContentText>
                                     <ContentAge>{t('infantAge')}</ContentAge>
                                 </div>
-                                <div className="">
+                                <div>
                                     <ContentBtn onClick={() => {setInfat(infat > 0 ? infat - 1 : 0)}}><i className="icon-minus"></i></ContentBtn>
                                     <UserCount>{infat}</UserCount>
                                     <ContentBtn onClick={() => {setInfat(infat + 1)}}><i className="icon-plus"></i></ContentBtn>
@@ -243,12 +243,12 @@ export const Search = () => {
                         </SearchCard>
                         <SearchCard>
                             <SearchCardName>{t('checkIn')}</SearchCardName>
-                            <CheckInp type="date" className="check" onChange={e => e.target.value} />
+                            <CheckInp type="date" className="check"/>
                             <ArrayIcon><CgArrowsExchange/></ArrayIcon>
                         </SearchCard>
                         <SearchCard>
                             <SearchCardName>{t('checkOut')}</SearchCardName>
-                            <CheckInp type="date" className="check" onChange={e => e.target.value}/>
+                            <CheckInp type="date" className="check"/>
                             <ArrayIcon><CgArrowsExchange/></ArrayIcon>
                         </SearchCard>
                         <SearchBtn onClick={hendleSearch}>{t('search')}</SearchBtn>

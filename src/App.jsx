@@ -10,6 +10,9 @@ import { MyProfile } from "./pages/MyProfile";
 import { Footer } from "./components/Footer";
 import { NotFound } from "./pages/NotFound";
 import { Hotelist } from "./pages/Hotelist";
+import { Details } from "./pages/Details";
+import { Payment } from "./pages/Payment";
+import { Congratulations } from "./pages/Congratulations";
 
 const App = () => {
 
@@ -26,6 +29,9 @@ const App = () => {
               <Route path='/' element={<Home/>}/>
               <Route path='/profile' element={<MyProfile/>}/>
               <Route path='/hotelist' element={<Hotelist/>}/>
+              <Route path='/details' element={<Details/>}/>
+              <Route path='/payment' element={<Payment/>}/>
+              <Route path='/congratulations' element={<Congratulations/>}/>
               <Route path='*' element={<NotFound/>}/>
             </Routes>
             <Footer/>

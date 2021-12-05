@@ -2,9 +2,9 @@ import React from 'react'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
-import { Row } from '../styled';
+import { Row, Checkbox, Label } from '../styled';
 
-const Filter = styled.div`
+const Filter = styled.aside`
     flex: 1;
 `
 const Flex = styled.div`
@@ -14,8 +14,8 @@ const Flex = styled.div`
 const FilterSearch = styled.div`
     margin-top: 13px;
     display: inline-block;
-    background: #FFFFFF;
-    border: 1px solid #E7ECF3;
+    background: ${(props) => props.theme.headerBgColor};
+    border: 1px solid ${(props) => props.theme.searchBr};
     border-radius: 10px;
 `
 const SearchInp = styled.input`
@@ -35,23 +35,14 @@ const SearchBtn = styled.button`
 const SearchTitle = styled.h4`
     font-weight: 500;
     font-size: 18px;
-    color: #141416;
+    color: ${(props) => props.theme.filterTitle};
     margin: 0;
-`
-const Label = styled.label`
-    margin-left: 12px;
-    font-size: 14px;
-    color: #3B3E44;
 `
 const Checks = styled.div`
     padding: 30px 0 15px;
     &:not(:last-child) {
-        border-bottom: 1px solid #E7ECF3;
+        border-bottom: 1px solid ${(props) => props.theme.inpBg};
     }
-`
-const Checkbox = styled.input`
-    width: 20px;
-    height: 20px;
 `
 const RangeInp = styled.input`
     padding: 7px 10px;
@@ -59,12 +50,13 @@ const RangeInp = styled.input`
     width: 65px;
     margin-left: 17px;
     border: 2px solid #316BFF;
+    color: ${(props) => props.theme.rangeColor};
     border-radius: 9px;
     background-color: transparent;
 `
 const FilterPrice = styled.span`
     font-weight: 500;
-    color: #3B3E44;
+    color: ${(props) => props.theme.cityPrice};
 `
 const Sum = styled.span`
     color: #84878B;
@@ -89,7 +81,7 @@ export const BigFilter = () => {
                 <SearchTitle>{t('popFilter')}</SearchTitle>
 
                 <Flex className="margin">
-                    <Checkbox type="checkbox" style={{backgroundColor: 'red'}} />
+                    <Checkbox type="checkbox" />
                     <Label htmlFor="">{t('hotels')}</Label>
                 </Flex>
 
@@ -126,24 +118,24 @@ export const BigFilter = () => {
             <Checks>
                 <SearchTitle>{t('property')}</SearchTitle>
                 <Row className="margin">
-                    <div>
+                    <Flex>
                         <Checkbox type="checkbox" name="" id="" />
                         <Label htmlFor="">{t('hotels')}</Label>
-                    </div>
+                    </Flex>
                     <Sum>108</Sum>
                 </Row>
                 <Row className="margin">
-                    <div>
+                    <Flex>
                         <Checkbox type="checkbox" name="" id="" />
                         <Label htmlFor="">{t('apartment')}</Label>
-                    </div>
+                    </Flex>
                     <Sum>141</Sum>
                 </Row>
                 <Row className="margin">
-                    <div>
+                    <Flex>
                         <Checkbox type="checkbox" name="" id="" />
                         <Label htmlFor="">{t('resort')}</Label>
-                    </div>
+                    </Flex>
                     <Sum>108</Sum>
                 </Row>
                 
@@ -183,45 +175,45 @@ export const BigFilter = () => {
                 <SearchTitle>{t('facilities')}</SearchTitle>
 
                 <Row className="margin">
-                    <div>
+                    <Flex>
                         <Checkbox type="checkbox" name="" id="" />
                         <Label htmlFor="">{t('outdoor')}</Label>
-                    </div>
+                    </Flex>
                     <Sum>108</Sum>
                 </Row>
                 <Row className="margin">
-                    <div>
+                    <Flex>
                         <Checkbox type="checkbox" name="" id="" />
                         <Label htmlFor="">{t('berbeque')}</Label>
-                    </div>
+                    </Flex>
                     <Sum>141</Sum>
                 </Row>
                 <Row className="margin">
-                    <div>
+                    <Flex>
                         <Checkbox type="checkbox" name="" id="" />
                         <Label htmlFor="">{t('living')}</Label>
-                    </div>
+                    </Flex>
                     <Sum>108</Sum>
                 </Row>
                 <Row className="margin">
-                    <div>
+                    <Flex>
                         <Checkbox type="checkbox" name="" id="" />
                         <Label htmlFor="">{t('roomSer')}</Label>
-                    </div>
+                    </Flex>
                     <Sum>108</Sum>
                 </Row>
                 <Row className="margin">
-                    <div>
+                    <Flex>
                         <Checkbox type="checkbox" name="" id="" />
                         <Label htmlFor="">{t('swimming')}</Label>
-                    </div>
+                    </Flex>
                     <Sum>141</Sum>
                 </Row>
                 <Row className="margin">
-                    <div>
+                    <Flex>
                         <Checkbox type="checkbox" name="" id="" />
                         <Label htmlFor="">{t('spa')}</Label>
-                    </div>
+                    </Flex>
                     <Sum>108</Sum>
                 </Row>
                 
