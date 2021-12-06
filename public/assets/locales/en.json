@@ -152,5 +152,12 @@
     "ocupancy": "Ocupancy text and fee",
     "service": "Service free",
     "total": "Total",
-    "report": "Report this property"
+    "report": "Report this property",
+    "congrat": "Congratulations!",
+    "yourTrip": "Your trip has been booked!",
+    "reserveDet": "Reserve details",
+    "booking": "Booking code",
+    "payment": "Payment method",
+    "creaditCard": "Creadit card",
+    "goTo": "Go To Your Home"
 }

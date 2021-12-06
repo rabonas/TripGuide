@@ -23,7 +23,7 @@ export const Payment = () => {
             <Container>
                 <Bread to="/">{t('pageName1')} <span className="icon-right"></span></Bread>
                 <Bread to="/hotelist">{t('pageName2')} <span className="icon-right"></span></Bread>
-                <Bread to="/hotelist">{t('pageName3')} <span className="icon-right"></span></Bread>
+                <Bread to="/details">{t('pageName3')} <span className="icon-right"></span></Bread>
                 <ThisPage>{t('pageName4')}</ThisPage>
 
                 <Flex>

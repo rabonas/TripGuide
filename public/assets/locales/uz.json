@@ -152,5 +152,12 @@
     "ocupancy": "To'lov matni va to'lov",
     "service": "Xizmat bepul",
     "total": "Jami",
-    "report": "Bu mulk haqida xabar bering"
+    "report": "Bu mulk haqida xabar bering",
+    "congrat": "Tabriklaymiz!",
+    "yourTrip": "Sayohatingiz band qilindi!",
+    "reserveDet": "Zaxira tafsilotlari",
+    "booking": "Rezervasyon kodi",
+    "payment": "To'lov usuli",
+    "creaditCard": "Kredit karta",
+    "goTo": "Uyingizga boring"
 }
