@@ -123,7 +123,9 @@ export const DarkTheme = {
     inpText: '#84878B',
     inpBr: '#222529',
     Book: '#fff',
-    conTitle: '#B1B5C4'
+    conTitle: '#B1B5C4',
+    infoBr: '#3B3E44',
+    reserveBr: 'none'
 };
 
 export const LightTheme = {
@@ -186,6 +188,8 @@ export const LightTheme = {
     inpText: '#4F4F4F',
     inpBr: '#EAEAEA',
     Book: '#333',
-    conTitle: '#3B3E44'
+    conTitle: '#3B3E44',
+    infoBr: '#F1F2F4',
+    reserveBr: '1px solid #F0EFEF'
 };
 
