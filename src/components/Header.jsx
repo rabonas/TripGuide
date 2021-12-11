@@ -98,7 +98,7 @@ const Header = () => {
         <HeaderTop>
             <Link to="/">
                 <AlignCenter>
-                    <img src="/assets/tripGuideLogo.svg" alt="" />
+                    <img src="/assets/img/tripGuideLogo.svg" alt="" />
                     <LogoText>TripGuide</LogoText>
                 </AlignCenter>
             </Link>
@@ -115,21 +115,21 @@ const Header = () => {
                 <Dropdown>
                 <DropBtn>
                     <Flag>
-                        <img style={{width: '100%'}} src={`/assets/${lang}.png`} alt="" />
+                        <img style={{width: '100%'}} src={`/assets/img/${lang}.png`} alt="" />
                     </Flag>
                 </DropBtn>
                 <DropdownContent>
                     <DropdownLink to="/" onClick={() => {i18next.changeLanguage('en') && setLang('en')}}>
                         <Flag>
-                            <img style={{width: '100%'}} src={`/assets/en.png`} alt="" />
+                            <img style={{width: '100%'}} src={`/assets/img/en.png`} alt="" />
                         </Flag> English (us)</DropdownLink>
                     <DropdownLink to="/" onClick={() => {i18next.changeLanguage('ru') && setLang('ru')}}>
                         <Flag>
-                            <img style={{width: '100%'}} src={`/assets/ru.png`} alt="" />
+                            <img style={{width: '100%'}} src={`/assets/img/ru.png`} alt="" />
                         </Flag> Russian</DropdownLink>
                     <DropdownLink to="/" onClick={() => {i18next.changeLanguage('uz') && setLang('uz')}}>
                         <Flag>
-                            <img style={{width: '100%'}} src={`/assets/uz.png`} alt="" />
+                            <img style={{width: '100%'}} src={`/assets/img/uz.png`} alt="" />
                         </Flag> Uzbek</DropdownLink>
                 </DropdownContent>
                 </Dropdown>
@@ -139,7 +139,7 @@ const Header = () => {
                     <CounterBell>1</CounterBell>
                 </Bell>
 
-                <img src="/assets/person.png" alt="" />
+                <img src="/assets/img/person.png" alt="" />
                 <Dropdown>
                 <Profile>Delowar<i className="icon-select-bottom"></i></Profile>
                 <DropdownContent>

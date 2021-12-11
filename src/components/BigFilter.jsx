@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { Row, Checkbox, Label } from '../styled';
 
-const Filter = styled.aside`
+const Filter = styled.form`
     flex: 1;
 `
 const Flex = styled.div`
@@ -68,7 +68,12 @@ const SeeMore = styled.a`
 
 export const BigFilter = () => {
     const [range, setRange] = useState(0)
-    const { t } = useTranslation()
+    const { t } = useTranslation();
+
+    const handleCheck = (e) => {
+        console.log(e.target.value)
+    }
+
     return (
         <Filter>
             <SearchTitle>{t('searchLocation')}</SearchTitle>
@@ -81,23 +86,23 @@ export const BigFilter = () => {
                 <SearchTitle>{t('popFilter')}</SearchTitle>
 
                 <Flex className="margin">
-                    <Checkbox type="checkbox" />
-                    <Label htmlFor="">{t('hotels')}</Label>
+                    <Checkbox type="checkbox" id="hotels" value='hotels' onChange={handleCheck} />
+                    <Label htmlFor="hotels">{t('hotels')}</Label>
                 </Flex>
 
                 <Flex className="margin">
-                    <Checkbox type="checkbox" name="" id="" />
-                    <Label htmlFor="">{t('breakfast')}</Label>
+                    <Checkbox type="checkbox" id="breakfast" value='breakfast' onChange={handleCheck} />
+                    <Label htmlFor="breakfast">{t('breakfast')}</Label>
                 </Flex>
 
                 <Flex className="margin">
-                    <Checkbox type="checkbox" name="" id="" />
-                    <Label htmlFor="">{t('cancell')}</Label>
+                    <Checkbox type="checkbox" id="cancell" value='cancell' onChange={handleCheck}  />
+                    <Label htmlFor="cancell">{t('cancell')}</Label>
                 </Flex>
 
                 <Flex className="margin">
-                    <Checkbox type="checkbox" name="" id="" />
-                    <Label htmlFor="">{t('prepay')}</Label>
+                    <Checkbox type="checkbox" id="NoPrepayment" value='NoPrepayment' onChange={handleCheck}  />
+                    <Label htmlFor="NoPrepayment">{t('prepay')}</Label>
                 </Flex>
                 
                 <SeeMore href="#" >{t('seeMore')}</SeeMore>
@@ -119,22 +124,22 @@ export const BigFilter = () => {
                 <SearchTitle>{t('property')}</SearchTitle>
                 <Row className="margin">
                     <Flex>
-                        <Checkbox type="checkbox" name="" id="" />
-                        <Label htmlFor="">{t('hotels')}</Label>
+                        <Checkbox type="checkbox" id="hotel" value='hotels' onChange={handleCheck}/>
+                        <Label htmlFor="hotel">{t('hotels')}</Label>
                     </Flex>
                     <Sum>108</Sum>
                 </Row>
                 <Row className="margin">
                     <Flex>
-                        <Checkbox type="checkbox" name="" id="" />
-                        <Label htmlFor="">{t('apartment')}</Label>
+                        <Checkbox type="checkbox" id="apartment" value='apartment' onChange={handleCheck}/>
+                        <Label htmlFor="apartment">{t('apartment')}</Label>
                     </Flex>
                     <Sum>141</Sum>
                 </Row>
                 <Row className="margin">
                     <Flex>
-                        <Checkbox type="checkbox" name="" id="" />
-                        <Label htmlFor="">{t('resort')}</Label>
+                        <Checkbox type="checkbox" id="resort" value='resort' onChange={handleCheck}/>
+                        <Label htmlFor="resort">{t('resort')}</Label>
                     </Flex>
                     <Sum>108</Sum>
                 </Row>
@@ -145,28 +150,28 @@ export const BigFilter = () => {
             <Checks>
                 <SearchTitle>{t('budget')}</SearchTitle>
                 <Flex className="margin">
-                    <Checkbox type="checkbox" name="budget" id="lessBudget"  />
-                    <Label htmlFor="lessBudget">{t('toPrice1')}</Label>
+                    <Checkbox type="checkbox" id="toPrice1" value='Less than $75' onChange={handleCheck} />
+                    <Label htmlFor="toPrice1">{t('toPrice1')}</Label>
                 </Flex>
 
                 <Flex className="margin">
-                    <Checkbox type="checkbox" name="budget" id="miniBudget" />
-                    <Label htmlFor="miniBudget">{t('toPrice2')}</Label>
+                    <Checkbox type="checkbox" id="toPrice2" value='$75 to 125' onChange={handleCheck}/>
+                    <Label htmlFor="toPrice2">{t('toPrice2')}</Label>
                 </Flex>
 
                 <Flex className="margin">
-                    <Checkbox type="checkbox" name="budget" id="midBudget" />
-                    <Label htmlFor="midBudget">{t('toPrice3')}</Label>
+                    <Checkbox type="checkbox" id="toPrice3" value='$125 to 200' onChange={handleCheck}/>
+                    <Label htmlFor="toPrice3">{t('toPrice3')}</Label>
                 </Flex>
 
                 <Flex className="margin">
-                    <Checkbox type="checkbox" name="budget" id="bigBudget" />
-                    <Label htmlFor="bigBudget">{t('toPrice4')}</Label>
+                    <Checkbox type="checkbox" id="toPrice4" value='$200 to $300' onChange={handleCheck}/>
+                    <Label htmlFor="toPrice4">{t('toPrice4')}</Label>
                 </Flex>
 
                 <Flex className="margin">
-                    <Checkbox type="checkbox" name="budget" id="passBudget" />
-                    <Label htmlFor="passBudget">{t('toPrice5')}</Label>
+                    <Checkbox type="checkbox" id="toPrice5" value='Greater than $300' onChange={handleCheck}/>
+                    <Label htmlFor="toPrice5">{t('toPrice5')}</Label>
                 </Flex>
                 
             </Checks>
@@ -176,43 +181,43 @@ export const BigFilter = () => {
 
                 <Row className="margin">
                     <Flex>
-                        <Checkbox type="checkbox" name="" id="" />
-                        <Label htmlFor="">{t('outdoor')}</Label>
+                        <Checkbox type="checkbox" id="outdoor" value='outdoor' onChange={handleCheck}/>
+                        <Label htmlFor="outdoor">{t('outdoor')}</Label>
                     </Flex>
                     <Sum>108</Sum>
                 </Row>
                 <Row className="margin">
                     <Flex>
-                        <Checkbox type="checkbox" name="" id="" />
-                        <Label htmlFor="">{t('berbeque')}</Label>
+                        <Checkbox type="checkbox" id="berbeque" value='berbeque' onChange={handleCheck}/>
+                        <Label htmlFor="berbeque">{t('berbeque')}</Label>
                     </Flex>
                     <Sum>141</Sum>
                 </Row>
                 <Row className="margin">
                     <Flex>
-                        <Checkbox type="checkbox" name="" id="" />
-                        <Label htmlFor="">{t('living')}</Label>
+                        <Checkbox type="checkbox" id="living" value='living room' onChange={handleCheck}/>
+                        <Label htmlFor="living">{t('living')}</Label>
                     </Flex>
                     <Sum>108</Sum>
                 </Row>
                 <Row className="margin">
                     <Flex>
-                        <Checkbox type="checkbox" name="" id="" />
-                        <Label htmlFor="">{t('roomSer')}</Label>
+                        <Checkbox type="checkbox" id="roomSer" value='room Service' onChange={handleCheck}/>
+                        <Label htmlFor="roomSer">{t('roomSer')}</Label>
                     </Flex>
                     <Sum>108</Sum>
                 </Row>
                 <Row className="margin">
                     <Flex>
-                        <Checkbox type="checkbox" name="" id="" />
-                        <Label htmlFor="">{t('swimming')}</Label>
+                        <Checkbox type="checkbox" id="swimming" value='swimming' onChange={handleCheck}/>
+                        <Label htmlFor="swimming">{t('swimming')}</Label>
                     </Flex>
                     <Sum>141</Sum>
                 </Row>
                 <Row className="margin">
                     <Flex>
-                        <Checkbox type="checkbox" name="" id="" />
-                        <Label htmlFor="">{t('spa')}</Label>
+                        <Checkbox type="checkbox" id="spa" value='spa' onChange={handleCheck}/>
+                        <Label htmlFor="spa">{t('spa')}</Label>
                     </Flex>
                     <Sum>108</Sum>
                 </Row>

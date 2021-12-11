@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import { useTranslation } from 'react-i18next';
-import { Container, Bread, ThisPage, Row } from '../styled'
+import { Container, Bread, ThisPage } from '../styled'
 import { Confirm } from '../components/Confirm';
 import { Booked } from '../components/Booked';
 

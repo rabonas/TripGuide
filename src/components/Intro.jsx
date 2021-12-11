@@ -32,7 +32,7 @@ const SearchCard = styled.div`
 export const Intro = () => {
     const { t } = useTranslation()
     return (
-            <IntroDiv style={{backgroundImage: 'url(/assets/intro-img.jpg)'}}>
+            <IntroDiv style={{backgroundImage: 'url(/assets/img/intro-img.jpg)'}}>
                 <IntroBg>
                     <Container>
                         <Title>{t('bigTitle')}</Title>

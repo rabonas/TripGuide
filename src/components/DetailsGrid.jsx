@@ -20,11 +20,11 @@ const Images = styled.div`
 export const DetailsGrid = () => {
     return (
         <Grid>
-            <img style={{width: '60%'}} src="/assets/gridImg.jpg" alt="" />
+            <img style={{width: '60%'}} src="/assets/img/gridImg.jpg" alt="" />
             <Images>
-                <GridImg src="/assets/gridImg2.jpg" alt="" />
-                <GridImg src="/assets/gridImg3.jpg" alt="" />
-                <GridImg src="/assets/gridImg4.jpg" alt="" />
+                <GridImg src="/assets/img/gridImg2.jpg" alt="" />
+                <GridImg src="/assets/img/gridImg3.jpg" alt="" />
+                <GridImg src="/assets/img/gridImg4.jpg" alt="" />
             </Images>
         </Grid>
     )

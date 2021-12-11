@@ -19,6 +19,7 @@
     "inpPlace": "Where are you from?",
     "checkIn": "Check in",
     "checkOut": "Check out",
+    "addDate": "Add Date",
     "search": "Search",
     "roundTrip": "Round trip",
     "pess": "pessenger",
@@ -159,5 +160,7 @@
     "booking": "Booking code",
     "payment": "Payment method",
     "creaditCard": "Creadit card",
-    "goTo": "Go To Your Home"
+    "goTo": "Go To Your Home",
+    "popPlace": "Popular Places",
+    "destination": "Destinations"
 }

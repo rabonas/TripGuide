@@ -78,7 +78,7 @@ export const Booked = () => {
                 <RatingNum>(122 {t('reviews')})</RatingNum>
             </Rating>
 
-            <BookedImg src="/assets/bookedImg.jpg" alt="" />
+            <BookedImg src="/assets/img/bookedImg.jpg" alt="" />
 
             <Report>1 {t('bedroom')} + 1 {t('private')}</Report>
 

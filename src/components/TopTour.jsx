@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import { useTranslation } from 'react-i18next';
 
 const TopTourCard = styled.div`
     position: relative;
@@ -38,13 +39,14 @@ const InfoPopular  = styled.span`
 `
 
 export const TopTour = (props) => {
+    const { t } = useTranslation();
     return (
         <TopTourCard>
-           <TopTourImg className="top-tour__img" src={props.image} alt={props.city} />
+           <TopTourImg src={props.image} alt={props.city} />
            <TopTourState>{props.state}</TopTourState>
            <TopTourInfo>
                <InfoCity>{props.city}</InfoCity>
-               <InfoPopular>{props.pop}</InfoPopular>
+               <InfoPopular>{props.pop} {t('popPlace')}</InfoPopular>
            </TopTourInfo>
         </TopTourCard>
     )

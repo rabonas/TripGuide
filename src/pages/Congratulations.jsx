@@ -152,7 +152,7 @@ export const Congratulations = () => {
                         </Reserve>
                         <GoHome to="/">{t('goTo')}</GoHome>
                     </Info>
-                    <InfoImg src="/assets/bookedImg.jpg" alt="" />
+                    <InfoImg src="/assets/img/bookedImg.jpg" alt="" />
                 </Row>
             </Container>
         </CongratulationsSec>

@@ -165,15 +165,15 @@ export const Confirm = () => {
                 <Title>{t('creadit')}</Title>
                 <Flex>
                     <Creadit>
-                        <img src="/assets/card.png" alt="" />
+                        <img src="/assets/img/card.png" alt="" />
                     </Creadit>
 
                     <Creadit>
-                        <img src="/assets/paypal.png" alt="" />
+                        <img src="/assets/img/paypal.png" alt="" />
                     </Creadit>
 
                     <Creadit>
-                        <img src="/assets/visa.png" alt="" />
+                        <img src="/assets/img/visa.png" alt="" />
                     </Creadit>
                 </Flex>
             </Info>
@@ -186,7 +186,7 @@ export const Confirm = () => {
                     <Cod>8948   xxxx  xxxx  7894</Cod>
                     <Row>
                         <Name>{t('holder')}</Name>
-                        <img src="/assets/circles.png" alt="" />
+                        <img src="/assets/img/circles.png" alt="" />
                     </Row>
                 </BlueCard>
 
@@ -198,7 +198,7 @@ export const Confirm = () => {
                     <Cod>8948   xxxx  xxxx  7894</Cod>
                     <Row>
                         <Name>{t('holder')}</Name>
-                        <img src="/assets/visa.png" alt="" />
+                        <img src="/assets/img/visa.png" alt="" />
                     </Row>
                 </GreenCard>
             </Row>

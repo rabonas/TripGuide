@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
-import { IconStar, RatingParcent, RatingNum } from '../styled'
+import { IconStar, RatingParcent } from '../styled'
 
 const TrendingCard = styled.div`
     text-align: left;
@@ -50,16 +50,15 @@ const Btn = styled.button`
 export const Trending = (props) => {
     const { t } = useTranslation()
     return (
-        <TrendingCard>
+        <TrendingCard key={props.id}>
             <TrendingImg src={props.image} alt={props.name} />
             <TrendingText>
                 <Name>{props.name}</Name>
                 <Rating>
                     <IconStar className="icon-star"></IconStar> 
-                    <RatingParcent>4.91</RatingParcent> 
-                    <RatingNum>(147)</RatingNum>
+                    <RatingParcent>{props.rating}</RatingParcent> 
                 </Rating>
-                <Price>$250.00<Night>/night</Night></Price>
+                <Price>${props.price}.00<Night>/night</Night></Price>
                 <Btn>{t('bookNow')}</Btn>
             </TrendingText>
         </TrendingCard>

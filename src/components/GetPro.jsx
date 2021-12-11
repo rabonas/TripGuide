@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components'
 
@@ -30,7 +30,7 @@ const GetProText = styled.p`
     color: #FFFFFF;
     opacity: 0.88;
 `
-const Inp = styled.div`
+const Inp = styled.form`
     display: flex;
     padding: 8px;
     background: #FCFCFD;
@@ -62,15 +62,22 @@ const InpBtn = styled.button`
 export const GetPro = () => {
     const { t } = useTranslation()
 
+    const mail = useRef(null)
+
+    const handleMail = (e) => {
+        e.preventDefault();
+        console.log(mail.current.value);
+    }
+
     return (
-        <GetProCard style={{backgroundImage: 'url(/assets/getPro.jpg)'}}>
+        <GetProCard style={{backgroundImage: 'url(/assets/img/getPro.jpg)'}}>
             <div>
                 <GetProTitle>{t('getPro')}</GetProTitle>
                 <GetProText>{t('getProText')}</GetProText>
             </div>
             <Inp>
-                <InpMail type="email" placeholder={t('mail')} />
-                <InpBtn>{t('subscribe')}</InpBtn>
+                <InpMail type="email" placeholder={t('mail')} ref={mail} />
+                <InpBtn onClick={handleMail}>{t('subscribe')}</InpBtn>
             </Inp>
         </GetProCard>
     )

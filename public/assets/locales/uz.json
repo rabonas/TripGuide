@@ -19,6 +19,7 @@
     "inpPlace": "Qayerliksiz?",
     "checkIn": "Belgilanish",
     "checkOut": "Tekshirib ko'rmoq",
+    "addDate": "Sana qo'shish",
     "search": "Qidirish",
     "roundTrip": "Borish va kelish yo'nalishida",
     "pess": "yo'lovchi",
@@ -159,5 +160,7 @@
     "booking": "Rezervasyon kodi",
     "payment": "To'lov usuli",
     "creaditCard": "Kredit karta",
-    "goTo": "Uyingizga boring"
+    "goTo": "Uyingizga boring",
+    "popPlace": "Mashhur joylar",
+    "destination": "Manzillar"
 }

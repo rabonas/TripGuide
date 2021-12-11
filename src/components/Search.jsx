@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { useTranslation } from 'react-i18next';
-import React, { useState } from 'react'
-import { Navigate, useNavigate } from "react-router";
+import React, { useRef, useState } from 'react';
+import DayPickerInput from 'react-day-picker/DayPickerInput';
+import 'react-day-picker/lib/style.css';
+import { useNavigate } from "react-router";
 import { CgArrowsExchange } from 'react-icons/cg'
 import Select from 'react-select';
 import { Container, Row } from '../styled'
@@ -81,6 +83,15 @@ const SearchCard = styled.div`
     &:nth-child(1) {
         width: 31%;
     }
+    & input {
+        border: none;
+        color: ${(props) => props.theme.page};
+        outline: none;
+        background-color: transparent;
+    }
+    & .css-qc6sy-singleValue {
+        color: ${(props) => props.theme.page};
+    }
 `
 const SearchCardName = styled.label`
     display: block;
@@ -88,13 +99,6 @@ const SearchCardName = styled.label`
     font-weight: 500;
     font-size: 18px;
     color: ${(props) => props.theme.btnColor};
-`
-const CheckInp = styled.input`
-    width: 200px;
-    border: none;
-    outline: none;
-    background-color: transparent;
-    padding: 0;
 `
 const SearchBtn = styled.button`
     background: #3B71FE;
@@ -140,7 +144,6 @@ const Content = styled.div`
 export const Search = () => {
     const [user, setUser] = useState(0);
     const [child, setChild] = useState(0);
-    const [city, setCity] = useState('')
     const [infat, setInfat] = useState(0);
 
     let history = useNavigate()
@@ -174,13 +177,15 @@ export const Search = () => {
 
     const hendleSearch = (e) => {
         e.preventDefault();
-        history('/hotelist')
+        history('/hotelist');
+        console.log(state.current.controlRef.innerText);
+        console.log(dateIn.current.state.value);
+        console.log(dateOut.current.state.value);
     }
 
-    const hendleCities = (newValue) => {
-        setCity(newValue.value)
-        console.log(newValue.value)
-    }
+    const dateIn = useRef(null);
+    const state = useRef(null);
+    const dateOut = useRef(null);
     
     return (
         <Container>
@@ -235,20 +240,22 @@ export const Search = () => {
                     </Pessenger>
                 </SearchRow>
 
-                <Form>
+                <Form >
                     <Row>
                         <SearchCard>
                             <SearchCardName>{t('location')}</SearchCardName>
-                            <Select options={cities} placeholder={t('inpPlace')} onClick={hendleCities} />
+                            <Select options={cities} placeholder={t('inpPlace')} ref={state} />
                         </SearchCard>
+
                         <SearchCard>
                             <SearchCardName>{t('checkIn')}</SearchCardName>
-                            <CheckInp type="date" className="check"/>
+                            <DayPickerInput placeholder={t('addDate')} ref={dateIn} />
                             <ArrayIcon><CgArrowsExchange/></ArrayIcon>
                         </SearchCard>
+
                         <SearchCard>
                             <SearchCardName>{t('checkOut')}</SearchCardName>
-                            <CheckInp type="date" className="check"/>
+                            <DayPickerInput placeholder={t('addDate')} ref={dateOut} />
                             <ArrayIcon><CgArrowsExchange/></ArrayIcon>
                         </SearchCard>
                         <SearchBtn onClick={hendleSearch}>{t('search')}</SearchBtn>

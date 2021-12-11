@@ -99,13 +99,13 @@ export const Featured = () => {
         <Row>
             <div>
                 <FeaturedCard>
-                    <img src="/assets/barcelona.jpg" alt="" />
+                    <img src="/assets/img/barcelona.jpg" alt="" />
                     <FeaturedCardBg>
                         <Rating>3.5</Rating>
                         <Info>
                             <InfoTitleBig>{t('tour1')}</InfoTitleBig>
                             <AlignCenter>
-                                <ActiveProfileBig src="/assets/person.jpg" alt="" />
+                                <ActiveProfileBig src="/assets/img/person.jpg" alt="" />
                                 <ActiveCountBig>196 {t('activitie')}</ActiveCountBig>
                             </AlignCenter>
                         </Info>
@@ -113,13 +113,13 @@ export const Featured = () => {
                 </FeaturedCard>
                 <Row>
                     <FeaturedCard>
-                        <img src="/assets/london.jpg" alt="" />
+                        <img src="/assets/img/london.jpg" alt="" />
                         <FeaturedCardBgMini>
                             <Rating>3.5</Rating>
                             <Info>
                                 <InfoTitleMid>{t('tour2')}</InfoTitleMid>
                                 <AlignCenter>
-                                    <ActiveProfileMid src="/assets/person.jpg" alt="" />
+                                    <ActiveProfileMid src="/assets/img/person.jpg" alt="" />
                                     <ActiveCountMid>196 {t('activitie')}</ActiveCountMid>
                                 </AlignCenter>
                             </Info>
@@ -127,13 +127,13 @@ export const Featured = () => {
                     </FeaturedCard>
 
                     <FeaturedCard>
-                        <img src="/assets/australia2.jpg" alt="" />
+                        <img src="/assets/img/australia2.jpg" alt="" />
                         <FeaturedCardBgMini>
                             <Rating>3.5</Rating>
                             <Info>
                                 <InfoTitleMid>{t('tour3')}</InfoTitleMid>
                                 <AlignCenter>
-                                    <ActiveProfileMid src="/assets/person.jpg" alt="" />
+                                    <ActiveProfileMid src="/assets/img/person.jpg" alt="" />
                                     <ActiveCountMid>196 {t('activitie')}</ActiveCountMid>
                                 </AlignCenter>
                             </Info>
@@ -143,39 +143,39 @@ export const Featured = () => {
             </div>
             <div>
                 <FeaturedCard>
-                    <img src="/assets/australia.jpg" alt="" />
+                    <img src="/assets/img/australia.jpg" alt="" />
                     <FeaturedCardBgMini>
                         <Rating>3.5</Rating>
                         <Info>
                             <InfoTitleMini>{t('tour3')}</InfoTitleMini>
                             <AlignCenter>
-                                <ActiveProfileMini src="/assets/person.jpg" alt="" />
+                                <ActiveProfileMini src="/assets/img/person.jpg" alt="" />
                                 <ActiveCountMini>196 {t('activitie')}</ActiveCountMini>
                             </AlignCenter>
                         </Info>
                     </FeaturedCardBgMini>
                 </FeaturedCard>
                 <FeaturedCard>
-                    <img src="/assets/japan.jpg" alt="" />
+                    <img src="/assets/img/japan.jpg" alt="" />
                     <FeaturedCardBgMini>
                         <Rating>3.5</Rating>
                         <Info>
                             <InfoTitleMini>{t('tour4')}</InfoTitleMini>
                             <AlignCenter>
-                                <ActiveProfileMini src="/assets/person.jpg" alt="" />
+                                <ActiveProfileMini src="/assets/img/person.jpg" alt="" />
                                 <ActiveCountMini>196 {t('activitie')}</ActiveCountMini>
                             </AlignCenter>
                         </Info>
                     </FeaturedCardBgMini>
                 </FeaturedCard>
                 <FeaturedCard>
-                    <img src="/assets/japan2.jpg" alt="" />
+                    <img src="/assets/img/japan2.jpg" alt="" />
                     <FeaturedCardBgMini>
                         <Rating>3.5</Rating>
                         <Info>
                             <InfoTitleMini>{t('tour4')}</InfoTitleMini>
                             <AlignCenter>
-                                <ActiveProfileMini src="/assets/person.jpg" alt="" />
+                                <ActiveProfileMini src="/assets/img/person.jpg" alt="" />
                                 <ActiveCountMini>196 {t('activitie')}</ActiveCountMini>
                             </AlignCenter>
                         </Info>

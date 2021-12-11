@@ -47,23 +47,23 @@ const Info = styled.span`
     margin-top: 8px;
 `
 
-export const Explore = () => {
+export const Explore = ({photo, title, rooms, radius, price, location}) => {
     const { t } = useTranslation()
     return (
         <ExploreCard>
-            <ExploreImg src="/assets/dacha.jpg" alt="" />
+            <ExploreImg src={`/assets/img/${photo}`} alt="" />
             <Rating>
                 <IconStar className="icon-star"></IconStar> 
                 <RatingParcent>4.91</RatingParcent> 
                 <RatingNum>(147)</RatingNum>
             </Rating>
             <Row>
-                <InfoName>Comfort Space</InfoName>
-                <InfoPrice>$210</InfoPrice>
+                <InfoName>{title}</InfoName>
+                <InfoPrice>${price}</InfoPrice>
             </Row>
-            <Distance>1.2 km {t('town')}</Distance>
-            <Info><i className="icon-map"></i> Turkey, Mamaris</Info>
-            <Info><i className="icon-rooms"></i> {t('rooms')}: 375</Info>
+            <Distance>{radius} {t('town')}</Distance>
+            <Info><i className="icon-map"></i> {location}</Info>
+            <Info><i className="icon-rooms"></i> {t('rooms')}: {rooms}</Info>
         </ExploreCard>
     )
 }

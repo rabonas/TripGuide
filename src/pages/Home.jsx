@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import apiCalls from '../config/api';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from "styled-components";
 import { Featured } from '../components/Featured';
@@ -10,6 +11,7 @@ import { Explore } from '../components/Explore';
 import { Trending } from '../components/Trending';
 import { Travel } from '../components/Travel';
 import { Card } from '../components/Card';
+import SwiperCore, { Navigation } from 'swiper';
 
 const SectionTop = styled.section`
     background-color:  ${(props) => props.theme.bgColor};
@@ -39,16 +41,49 @@ const SecTitle = styled.h2`
     margin: 0 0 12px;
 `
 const SecText = styled.p`
-    // max-width: 600px;
     font-weight: 500;
     margin: 0 auto;
     line-height: 24px;
     margin: 0;
     color: #84878B;
 `
+const SliderBtn = styled.button`
+    padding: 13px 15px;
+    border-radius: 50%;
+    border: none;
+    margin-left: 10px;
+    font-size: 10px;
+    background-color: ${(props) => props.theme.bellAfter};
+    color: ${(props) => props.theme.headerText};
+`
 
 const Home = () => {
-    const { t } = useTranslation()
+    SwiperCore.use([Navigation]);
+    const { t } = useTranslation();
+    const [tour, setTour] = useState([]);
+    const [explore, setExplore] = useState([]);
+    const [trending, setTrending] = useState([]);
+    const [error, setError] = useState('')
+
+    useEffect(() => {
+        apiCalls.getTours().then(data => {
+            setTour(data);
+        }).catch( err => {
+            setError(err.message);
+        });
+
+        apiCalls.getExplore().then((data) => {
+            setExplore(data);
+        }).catch(err => {
+            setError(err.message);
+        })
+
+        apiCalls.getCities().then((data) => {
+            setTrending(data);
+        }).catch(err => {
+            setError(err.message);
+        })
+    }, []);
 
     return (
         <div>
@@ -58,14 +93,14 @@ const Home = () => {
                 <SecText>{t('bestPlaceText')}</SecText>
                 <Container>
                     <Row>
-                        <Card/>
-                        <Card/>
-                        <Card/>
-                        <Card/>
-                        <Card/>
-                        <Card/>
-                        <Card/>
-                        <Card/>
+                        <Card image="/assets/img/batu.jpg" title="Batu, East Java" />
+                        <Card image="/assets/img/kuta.jpg" title="Kuta" />
+                        <Card image="/assets/img/surabaya.jpg" title="Surabaya, East Java" />
+                        <Card image="/assets/img/malang.jpg" title="Malang, East Java" />
+                        <Card image="/assets/img/malang.jpg" title="Dieng, Central Java" />
+                        <Card image="/assets/img/nusa.jpg" title="Nusa Dua, Lombok" />
+                        <Card image="/assets/img/kuta.jpg" title="Bandung, West Java" />
+                        <Card image="/assets/img/batu.jpg" title="Wakatobi, Sumatera" />
                     </Row>
                 </Container>
             </SectionTop>
@@ -80,39 +115,52 @@ const Home = () => {
 
             <Section>
                 <Container>
-                    <SecTitle>{t('topTitle')}</SecTitle>
-                    <SecText>{t('topText')}</SecText>
-                    <Swiper slidesPerView="3" spaceBetween="30" style={{marginTop: '60px'}}>
-                        <SwiperSlide>
-                            <TopTour image='/assets/big-japan.jpg' state='Japan' city='Japan' pop='10 Popular Places' />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <TopTour image='/assets/bali.jpg' state='Indonesia' city='Bali' pop='10 Popular Places' />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <TopTour image='/assets/spain.jpg' state='Barcelona' city='Spain' pop='10 Popular Places' />
-                        </SwiperSlide>
+                    <Row>
+                        <div>
+                            <SecTitle>{t('topTitle')}</SecTitle>
+                            <SecText>{t('topText')}</SecText>
+                        </div>
+
+                        <div>
+                            <SliderBtn className="tour__prevButton"><i className="icon-left"></i></SliderBtn>
+                            <SliderBtn className="tour__nextButton"><i className="icon-right"></i></SliderBtn>
+                        </div>
+                    </Row>
+                    <Swiper slidesPerView={3} spaceBetween={30} style={{marginTop: '60px'}} modules={[Navigation]} navigation={{
+                        nextEl: '.tour__nextButton',
+                        prevEl: '.tour__prevButton'
+                    }}>
+                        {error ? error : 
+                        tour.map(e => (
+                            <SwiperSlide key={e.id}>
+                                <TopTour image={`/assets/img/${e.photo}`} state={e.name} city={e.country} pop={e.place_count} />
+                            </SwiperSlide>
+                        ))}
                     </Swiper>
                 </Container>
             </Section>
             
             <Section>
                 <Container>
-                    <SecTitle>{t('exploreTitle')}</SecTitle>
-                    <SecText>{t('exploreText')}</SecText>
-                    <Swiper slidesPerView="4" spaceBetween="30" style={{marginTop: '50px'}}>
-                        <SwiperSlide>
-                            <Explore/>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Explore/>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Explore/>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Explore/>
-                        </SwiperSlide>
+                    <Row>
+                        <div>
+                            <SecTitle>{t('exploreTitle')}</SecTitle>
+                            <SecText>{t('exploreText')}</SecText>
+                        </div>
+                        <div>
+                            <SliderBtn className="explore__prevButton"><i className="icon-left"></i></SliderBtn>
+                            <SliderBtn className="explore__nextButton"><i className="icon-right"></i></SliderBtn>
+                        </div>
+                    </Row>
+                    <Swiper slidesPerView={4} spaceBetween={30} style={{marginTop: '50px'}} modules={[Navigation]} navigation={{
+                        nextEl: '.explore__nextButton',
+                        prevEl: '.explore__prevButton'
+                    }}>
+                        {error ? error : explore.map(el => (
+                            <SwiperSlide key={el.id}>
+                                <Explore photo={el.image} title={el.title} rooms={el.rooms} radius={el.radius} price={el.price} location={el.location} />
+                            </SwiperSlide>
+                        ))}
                     </Swiper>
                 </Container>
             </Section>
@@ -122,12 +170,9 @@ const Home = () => {
                 <SecText>{t('trendingText')}</SecText>
                 <Container>
                     <RowAround>
-                        <Trending image="/assets/manila.jpg" name="Manila" />
-                        <Trending image="/assets/san-framcisco.jpg" name="San Francisco" />
-                        <Trending image="/assets/frankfurt.jpg" name="Frankfurt main" />
-                        <Trending image="/assets/washington.jpg" name="Washington" />
-                        <Trending image="/assets/stokholm.jpg" name="Stockholm" />
-                        <Trending image="/assets/seattle.jpg" name="Seattle" />
+                        {error ? error : trending.map(el => 
+                            (<Trending key={el.id} image={`/assets/img/${el.photo}`} name={el.name} price={el.price} rating={el.rating} />) )
+                        }
                     </RowAround>
                 </Container>
             </SectionTrending>
@@ -138,10 +183,10 @@ const Home = () => {
                     <SecText>{t('travelText')}</SecText>
                     <TravelCards>
                         <Row>
-                            <Travel image="/assets/beach.jpg" name={t('beach')} />
-                            <Travel image="/assets/city.jpg" name={t('city')} />
-                            <Travel image="/assets/hiking.jpg" name={t('hiking')} />
-                            <Travel image="/assets/sports.jpg" name={t('sports')} />
+                            <Travel image="/assets/img/beach.jpg" name={t('beach')} />
+                            <Travel image="/assets/img/city.jpg" name={t('city')} />
+                            <Travel image="/assets/img/hiking.jpg" name={t('hiking')} />
+                            <Travel image="/assets/img/sports.jpg" name={t('sports')} />
                         </Row>
                     </TravelCards>
                 </Container>

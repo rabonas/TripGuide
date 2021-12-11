@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
 
 const Cards = styled.div`
@@ -25,12 +26,13 @@ const Destination = styled.span`
     color: ${(props) => props.theme.cardDes};
 `
 
-export const Card = () => {
+export const Card = ({image, title}) => {
+    const { t } = useTranslation()
     return (
         <Cards>
-            <CardImg src="/assets/batu.jpg" alt="" />
-            <h3>Batu, East Java</h3>
-            <Destination>86 Destinations</Destination>
+            <CardImg src={image} alt="" />
+            <h3>{title}</h3>
+            <Destination>86 {t('destination')}</Destination>
         </Cards>
     )
 }

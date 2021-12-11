@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import apiCalls from '../config/api'
 import { useTranslation } from 'react-i18next';
 import { Search } from '../components/Search'
 import styled from 'styled-components'
@@ -7,7 +8,7 @@ import { List } from '../components/List'
 import { Bread, ThisPage } from '../styled';
 
 const TopSection = styled.section`
-    padding: 120px 0 250px;
+    padding: 40px 0 250px;
     background-color: ${(props) => props.theme.bgColor}
 `
 const BigContainer = styled.div`
@@ -35,7 +36,20 @@ const Links = styled.div`
 `
 
 export const Hotelist = () => {
-    const { t } = useTranslation()
+    const { t } = useTranslation();
+    const [list, setList] = useState([]);
+    const [err, setErr] = useState('');
+    const [loader, setLoader] = useState(true)
+
+    useEffect(() => {
+        apiCalls.getHotels().then(data => {
+            setList(data);
+            setLoader(false);
+        }).catch( err => {
+            setErr(err.message);
+        });
+    }, [])
+
     return (
         <TopSection>
             <Links>
@@ -47,9 +61,9 @@ export const Hotelist = () => {
                 <Flex>
                     <BigFilter/>
                     <HotelistItems>
-                        <List image="/assets/hotelistImg.jpg" name="Zuich, Switzerland" price="$320" />
-                        <List image="/assets/hotelistImg2.jpg" name="Zuich, Switzerland" price="$320" />
-                        <List image="/assets/hotelistImg3.jpg" name="Zuich, Switzerland" price="$320" />
+                        {err ? err : list.map(el => (
+                            <List id={el.id} image={`/assets/img/${el.photo}`} name={el.name} price={`$${el.price}`} rating={el.rating} reviews={el.reviews} location={el.location} />
+                        ))}
                         <View><i className="icon-loader"></i> {t('viewAll')}</View>
                     </HotelistItems>
                 </Flex>

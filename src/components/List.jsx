@@ -75,25 +75,31 @@ const Booking = styled(Link)`
     font-size: 20px;
     color: #FFFFFF;
 `
+const Img = styled.div`
+    width: 420px;
+    height: 465px;
+    overflow: hidden;
+    object-fit: cover;
+`
 
 export const List = (props) => {
     const { t } = useTranslation()
     return (
-        <ListItem>
-            <img src={props.image} alt="" />
+        <ListItem key={props.id}>
+            <Img><img src={props.image} alt="" /></Img>
             <ListText>
                 <ListTitle>{props.name}</ListTitle>
                 <Flex>
                     <Rating>
                         <IconStar className="icon-star"></IconStar> 
-                        <RatingParcent>4.91</RatingParcent> 
-                        <RatingNum>(122 {t('reviews')})</RatingNum>
+                        <RatingParcent>{props.rating}</RatingParcent> 
+                        <RatingNum>({props.reviews} {t('reviews')})</RatingNum>
                     </Rating>
-                    <Gps><Icon className="icon-flag"></Icon>Zuich town, Switzerland</Gps>
+                    <Gps><Icon className="icon-flag"></Icon>{props.location}</Gps>
                 </Flex>
 
                 <About>
-                    <Info><Icon className="icon-map"></Icon>Zuich town, Switzerland</Info>
+                    <Info><Icon className="icon-map"></Icon>{props.location}</Info>
                     <Info><Icon className="icon-date"></Icon>15.05.2021-16.05.2021</Info>
                     <Info><Icon className="icon-plan"></Icon>Depature from zuich</Info>
                 </About>
@@ -108,7 +114,7 @@ export const List = (props) => {
                     </div>
                     <div>
                         <Price>{props.price} <ForPrice>{t('forTwo')}</ForPrice></Price>
-                        <Booking to="/details">{t('bookNow')}</Booking>
+                        <Booking to={`/details/${props.id}`}>{t('bookNow')}</Booking>
                     </div>
                 </Row>
 

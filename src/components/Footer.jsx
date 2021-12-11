@@ -67,7 +67,7 @@ export const Footer = () => {
                     <div>
                         <Link to="/">
                             <AlignCenter>
-                                <img src="/assets/tripGuideLogo.svg" alt="" />
+                                <img src="/assets/img/tripGuideLogo.svg" alt="" />
                                 <LogoText>TripGuide</LogoText>
                             </AlignCenter>
                         </Link>
